@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Define the maze executable and source file
+# Defining the maze executable and source file
 maze_executable="./maze"
 source_file="maze.c"
 
-# Compile the maze game program
+# Compiling the maze game program
 echo "Compiling the maze game..."
 gcc -o $maze_executable $source_file
 compile_status=$?
@@ -17,6 +17,8 @@ echo "Compilation successful."
 # Define directories
 valid_dir="./valid"
 invalid_dir="./invalid"
+
+# This test is adapted from chatGPT’s response to the prompt ‘How should I tackle implementing my valid maze file tests that require inputs?'
 
 # Test valid mazes
 echo -e "\n\n~~ Valid Maze Tests ~~"
@@ -54,7 +56,9 @@ for maze_file in "$valid_dir"/*.txt; do
     fi
 done
 
-# Test invalid mazes
+# This test is adapted from chatGPT’s response to the prompt ‘How should I tackle implementing testing for invalid maze files that dont require input files?'
+
+# Test invalid mazes altogether as they dont have input errors just maze errors
 echo -e "\n\n~~ Invalid Maze Tests ~~"
 for maze_file in "$invalid_dir"/*.txt; do
     echo -n "Testing $(basename "$maze_file") for proper error handling - "
@@ -66,9 +70,10 @@ for maze_file in "$invalid_dir"/*.txt; do
     fi
 done
 
+# This test is adapted from chatGPT’s response to the prompt ‘How should I tackle my bad_input file tests?'
+
 # Test bad user input
 echo -e "\n\n~~ Bad User Input Test ~~"
-# Now correctly referencing the bad input file
 echo -n "Testing bad user input for 5_5.txt - "
 if [ -f "$valid_dir/5_5_bad_input.txt" ]; then
     $maze_executable < "$valid_dir/5_5_bad_input.txt" > /dev/null 2>&1
