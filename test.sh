@@ -14,13 +14,13 @@ if [ $compile_status -ne 0 ]; then
 fi
 echo "Compilation successful."
 
-# Define directories
+# Defining directories
 valid_dir="./valid"
 invalid_dir="./invalid"
 
 # This test is adapted from chatGPT’s response to the prompt ‘How should I tackle implementing my valid maze file tests that require inputs?'
 
-# Test valid mazes
+# Testing valid mazes
 echo -e "\n\n~~ Valid Maze Tests ~~"
 for maze_file in "$valid_dir"/*.txt; do
     # Skip non-maze files and wall_hit files
@@ -58,7 +58,7 @@ done
 
 # This test is adapted from chatGPT’s response to the prompt ‘How should I tackle implementing testing for invalid maze files that dont require input files?'
 
-# Test invalid mazes altogether as they dont have input errors just maze errors
+# Testing invalid mazes altogether as they dont have input errors just maze errors
 echo -e "\n\n~~ Invalid Maze Tests ~~"
 for maze_file in "$invalid_dir"/*.txt; do
     echo -n "Testing $(basename "$maze_file") for proper error handling - "
@@ -72,7 +72,7 @@ done
 
 # This test is adapted from chatGPT’s response to the prompt ‘How should I tackle my bad_input file tests?'
 
-# Test bad user input
+# Testing bad user input
 echo -e "\n\n~~ Bad User Input Test ~~"
 echo -n "Testing bad user input for 5_5.txt - "
 if [ -f "$valid_dir/5_5_bad_input.txt" ]; then
