@@ -36,7 +36,6 @@ int main() {
 
 // Function to show the menu
 void show_menu() {
-    // Implementation left out
     // Should handle user input to start the game or exit.
 }
 
