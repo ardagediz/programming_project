@@ -14,7 +14,8 @@ if [ $compile_status -ne 0 ]; then
 fi
 echo "Compilation successful."
 
-# Defining directories
+
+# Defining directories (I had these as subdirectories containing my maze and input files but gradescope didnt keep them in subdirectory form)
 valid_dir="./valid"
 invalid_dir="./invalid"
 
